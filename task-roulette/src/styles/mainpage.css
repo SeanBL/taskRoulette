@@ -1,0 +1,67 @@
+.flex-container-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container-title {
+    text-align: center;
+    margin-bottom: 2.5em;
+    margin-top: 2.5em;
+}
+
+.mainpageTitle {
+    font-family: cursive; 
+    font-size: 50px;
+    color: rgb(0, 138, 11);
+    padding-left: 10px;
+}
+.mainpageTitle2 {
+    font-family: cursive;
+    font-size: 80px;
+    color: rgb(0, 138, 11);
+    padding-left: 10px;
+}
+
+.flex-container-btns {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 4.5em;
+}
+
+.iconImg {
+    width: 150px; 
+    margin: 0em 3.5em 0em 3.5em;
+}
+
+.button-title {
+    font-size: 25px;
+}
+
+.task-btn {
+    font-size: 20px;
+    margin: auto;
+    padding: 15px 200px 15px 200px;
+    color: rgb(0, 0, 0);
+    border-radius: 7px;
+    background: linear-gradient(to right, #15fb00, #d9ff00);
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media only screen and (min-width: 260px) and (max-width: 768px) {
+    .flex-container-btns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-title {
+        margin-bottom: 1.5em;
+    }
+
+    .task-btn {
+        margin-bottom: 1.5em;
+    }
+        
+}
