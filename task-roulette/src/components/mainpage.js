@@ -7,17 +7,19 @@ export default function Mainpage() {
     const buttons = [
         {
             iconImg: rouletteIcon,
-            title: "Daily Tasks"
+            title: "Daily Tasks",
+            link: "/dailytask"
         },
         {
             iconImg: checklist,
-            title: "Task List"
+            title: "Task List",
+            link: "/tasklist"
         },
         {
             iconImg: shopping,
-            title: "Shopping List"
+            title: "Shopping List",
+            link: "/shoppinglist"
         }
-
     ]
 
     return (
@@ -29,19 +31,20 @@ export default function Mainpage() {
             
             <div className='flex-container-btns'>
                 {buttons.map(buttonList=> {
-                    const {iconImg, title} = buttonList;
+                    const {iconImg, title, link} = buttonList;
 
                     return (
                         <div>
-                            <img className='iconImg' src={iconImg} />
-                            <div className='button-title'>{title}</div>
+                            <a href={link}><img className='iconImg' src={iconImg} /></a>
+                            <a href={link}><div className='button-title'>{title}</div></a>
+                            
                         </div>
                     )
-                })}
+                })};
             </div>
-            <button className='task-btn'>Add New Task</button>
-            
-            
+            <a style={{margin: "auto"}} href='/newtask'>
+                <button className='task-btn'>Add New Task</button>
+            </a>
 
         </div>
     );

@@ -1,0 +1,15 @@
+.flex-container-newtask {
+    display: flex;
+    flex-direction: column;
+}
+
+.newtask-title {
+    color: blue;
+    margin: auto;
+}
+
+.task-input {
+    width: 90vw;
+    font-size: 17px;
+    margin: auto;
+}
