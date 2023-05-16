@@ -16,21 +16,7 @@ export default function Newtask() {
         setDeadline(e.target.value);
     };
 
-    const handleOnChange = (position) => {
-        const updatedCheckbox = checkbox.map((item, index) =>
-        index === position ? !item : item
-        );
-        setCheckbox(updatedCheckbox);
-    }
-
-    
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(inputs);
-        console.log(deadline);
-        console.log(checkbox);
-    }
+    const [urgencyState, setUrgencyState] = useState("");
 
     const urgentBox = [
         {
@@ -59,6 +45,25 @@ export default function Newtask() {
     const [checkbox, setCheckbox] = useState(
         new Array(urgentBox.length).fill(false)
     );
+
+    const handleOnChange = (position) => {
+        const updatedCheckbox = checkbox.map((item, index) =>
+        index === position ? !item : item
+        );
+        setCheckbox(updatedCheckbox);
+
+        const checkboxIndex = updatedCheckbox.indexOf(true);
+
+        setUrgencyState(urgentBox[checkboxIndex].title);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs);
+        console.log(deadline);
+        console.log(checkbox);
+        console.log(urgencyState);
+    }
 
     return (
         <div className='flex-container-newtask'>
