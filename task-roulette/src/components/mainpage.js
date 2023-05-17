@@ -14,8 +14,8 @@ export default function Mainpage() {
     // Run once after the component finishes rendering
     useEffect(()=>{
         
-        fetch("http://localhost:3001/api/users") // More practical for server migration
-        fetch("http://localhost:3000/api/users") // More practical for server migration
+        //fetch("http://localhost:3001/api/users") // More practical for server migration
+        //fetch("http://localhost:3000/api/users") // More practical for server migration
         fetch("/api/users") // More practical for server migration
         .then(response=>response.json())
         .then(data=>{
