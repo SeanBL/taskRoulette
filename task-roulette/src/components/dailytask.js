@@ -19,65 +19,70 @@ export default function Dailytask() {
 
     let randomNUNITask = notUrgentNotImportantTask[Math.floor(Math.random() * notUrgentNotImportantTask.length)];
 
+    function prepareDailyTask(payload) {
+        let newDailyTask = [...dailyTask, payload]
+        //newDailyTask = newDailyTask.sort((a, b) => a.urgencyRank - b.urgencyRank)
+        console.log(newDailyTask)
+        setDailyTask(newDailyTask);
+    }
+
+
     return (
         <div>
             <ul>
-                {dailyTask.map(task => (
+                {dailyTask.sort((a, b) => a.urgencyRank - b.urgencyRank).map(task => (
                     <li key={task.id}>
                         {task.name}<br></br>
-                        {task.urgency}
+                        {task.urgency}<br/>
+                        {task.urgencyRank}
                     </li>
                 ))}
             </ul>            
             <button onClick={()=> {
-                setDailyTask([
-                    ...dailyTask,
+                prepareDailyTask(
+    
                     {   
                         id: nextId++, 
                         name: randomUITask.taskTitle,
-                        urgengyRank: randomUITask.urgencyRank, 
+                        urgencyRank: randomUITask.urgencyRank, 
                         urgency: randomUITask.urgency 
                     }
-                ]);
+                );
             }}>
                 Add Urgent / Important Task
             </button>
             <button onClick={() => {
-                setDailyTask([
-                    ...dailyTask,
+                prepareDailyTask(
                     { 
                         id: nextId++, 
                         name: randomNUITask.taskTitle,
-                        urgengyRank: randomNUITask.urgencyRank, 
+                        urgencyRank: randomNUITask.urgencyRank, 
                         urgency: randomNUITask.urgency
-                    }
-                ]);
+                    });
             }}>
                 Add Not Urgent / Important Task
             </button>
             <button onClick={() => {
-                setDailyTask([
-                    ...dailyTask,
+                prepareDailyTask(
                     {
                         id: nextId++,
                         name: randomUNITask.taskTitle,
-                        urgengyRank: randomUNITask.urgencyRank, 
+                        urgencyRank: randomUNITask.urgencyRank, 
                         urgency: randomUNITask.urgency
                     }
-                ]);
+                );
             }}>
                 Add Urgent / Not Important Task
             </button>
             <button onClick={() => {
-                setDailyTask([
-                    ...dailyTask,
+                prepareDailyTask(
                     {
                         id: nextId++,
                         name: randomNUNITask.taskTitle,
-                        urgengyRank: randomNUNITask.urgencyRank, 
+                        urgencyRank: randomNUNITask.urgencyRank, 
                         urgency: randomNUNITask.urgency
                     }
-                ]);
+                );
             }}>
                 Add Not Urgent / Not Important Task
             </button>
