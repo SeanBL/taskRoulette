@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS tasks_roulette_db;
-CREATE DATABASE tasks_roulette_db;
+DROP DATABASE IF EXISTS task_roulette_db;
+CREATE DATABASE task_roulette_db;
 
-use tasks_roulette_db;
+use task_roulette_db;
 
 -- task: name, urgency, date
 --
