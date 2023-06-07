@@ -4,17 +4,7 @@ const path = require("path");
 const allRouter = require("./controllers");
 const app  = express();
 const port = process.env.port || 3001;
-
-const database = require('./config/connection');
-
-database.connect((error) => {
-    if (error) {
-        console.log("Error connecting to database:", error);
-    } else {
-        console.log("Connected to database.")
-    }
-});
-
+const UserController = require("./controllers/api/user");
 
 // Cross domain. Anyone can connect to me
 // const cors = require("cors");
@@ -33,7 +23,7 @@ app.get('*', (req, res) => {
 });
 
 app.use(express.static(path.resolve(__dirname, "..", "task_roulette")))
-app.use(allRouter);
+app.get('/users', UserController.getAllUsers);
 
 app.listen(port, () => {
     console.log(`API server running on http://localhost:${port}`);
